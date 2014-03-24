@@ -31,9 +31,9 @@ The third button tries to pass its own instance of `HttpClient`, however it fail
 
 The solution builds fine, however at runtime when clicking the 2nd or 3rd button, an exception occurs:
 
-<pre><code>
+````
 {System.TypeLoadException: Could not load type 'System.Net.Http.CFNetworkHandler' from assembly 'HttpClientTest_iOS'.  at System.Runtime.CompilerServices.AsyncVoidMethodBuilder.Start[<<FinishedLaunching>b__3>d__b] 
-</code></pre>
+````
 
 The explanation is fairly straight forward: `CFNetworkHandler` is not part of the assembly from the Nuget package. There is actually a hint in the warning when building:
 
@@ -43,12 +43,12 @@ However **I have no idea if this is the cause of the issue and how to fix it**.
 
 Also note that I have actually added the recommended assembly redirects as stated by James Montemagno at http://motzcod.es/post/78863496592/portable-class-libraries-httpclient-so-happy:
 
-<pre><code>
+````
 <dependentAssembly>
 	<assemblyIdentity name="System.Net.Http" publicKeyToken="b03f5f7f11d50a3a" culture="neutral" />
 	<bindingRedirect oldVersion="0.0.0.0-4.0.0.0" newVersion="2.0.5.0" />
 </dependentAssembly>
-</code></pre>
+````
 
 ## The Android project
 On Android I do pretty much the same as on iOS. The first button  is not using any specific handlers and works.
