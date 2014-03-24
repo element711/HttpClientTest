@@ -29,6 +29,9 @@ namespace HttpClientTest_iOS
 				var s = await shared.GetData();
 				Console.WriteLine("Received:");
 				Console.WriteLine(s);
+
+				var alert = new UIAlertView("Received", s, null, "OK", null);
+				alert.Show();
 			};
 
 
@@ -43,6 +46,8 @@ namespace HttpClientTest_iOS
 				var s = await shared.GetData();
 				Console.WriteLine("Received:");
 				Console.WriteLine(s);
+				var alert = new UIAlertView("Received", s, null, "OK", null);
+				alert.Show();
 			};
 
 			var btn3 = new UIButton(UIButtonType.System)
@@ -56,6 +61,8 @@ namespace HttpClientTest_iOS
 				var s = await shared.GetData();
 				Console.WriteLine("Received:");
 				Console.WriteLine(s);
+				var alert = new UIAlertView("Received", s, null, "OK", null);
+				alert.Show();
 			};
 
 			window.AddSubviews(btn1, btn2, btn3);
