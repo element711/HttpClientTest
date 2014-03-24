@@ -41,6 +41,15 @@ The explanation is fairly straight forward: `CFNetworkHandler` is not part of th
 
 However **I have no idea if this is the cause of the issue and how to fix it**.
 
+Also note that I have actually added the recommended assembly redirects as stated by James Montemagno at http://motzcod.es/post/78863496592/portable-class-libraries-httpclient-so-happy:
+
+<pre><code>
+<dependentAssembly>
+	<assemblyIdentity name="System.Net.Http" publicKeyToken="b03f5f7f11d50a3a" culture="neutral" />
+	<bindingRedirect oldVersion="0.0.0.0-4.0.0.0" newVersion="2.0.5.0" />
+</dependentAssembly>
+</code></pre>
+
 ## The Android project
 On Android I do pretty much the same as on iOS. The first button  is not using any specific handlers and works.
 
